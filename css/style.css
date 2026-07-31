@@ -923,9 +923,12 @@ body.theme-shop { --theme: var(--green); --theme-deep: var(--green-deep); }
   overflow: hidden;
 }
 .svc-card__icon img {
-  width: 84%;
-  height: 84%;
+  /* アイコン画像は余白を除いた正方形にそろえてあるので、
+     円の中央にそのまま収める */
+  width: 88%;
+  height: 88%;
   object-fit: contain;
+  object-position: center;
 }
 .svc-card--juku .svc-card__head { background: var(--blue-card-edge); }
 .svc-card--fash .svc-card__head { background: var(--orange); }
