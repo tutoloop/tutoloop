@@ -1069,6 +1069,32 @@ body.theme-shop { --theme: var(--green); --theme-deep: var(--green-deep); }
 .person__name { font-size: 17px; font-weight: 900; color: var(--ink); line-height: 1.4; }
 .person__role { font-size: 12.5px; font-weight: 700; color: #777; }
 
+/* ---------- 入会までの流れ（STEPカード＋担当者） ---------- */
+
+/* カード間に進行方向の矢印を置く。gapが26pxなので、その中央に重ねる */
+.cards--flow .info-card { position: relative; }
+.cards--flow .info-card:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -19px;
+  transform: translateY(-50%);
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 11px solid rgba(255, 255, 255, 0.9);
+}
+.flow-person {
+  max-width: 420px;
+  margin: 30px auto 0;
+  padding: 18px 26px;
+  background: var(--off);
+  border-radius: var(--radius-card);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.flow-person .person__photo { width: 76px; height: 76px; }
+
 /* ---------- 他事業への回遊リンク（各ページ下部） ---------- */
 
 .crosslink { background: var(--off); padding: 70px 20px; }
@@ -1127,6 +1153,17 @@ body.theme-shop { --theme: var(--green); --theme-deep: var(--green-deep); }
   .price-compare__arrow { transform: rotate(90deg); }
   .price-compare__col { width: 100%; }
   .price-compare__col--special { transform: none; }
+  /* 1カラムになるので、STEPの矢印は下向きに */
+  .cards--flow .info-card:not(:last-child)::after {
+    top: auto;
+    right: 50%;
+    bottom: -19px;
+    transform: translateX(50%);
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 11px solid rgba(255, 255, 255, 0.9);
+    border-bottom: 0;
+  }
 }
 
 @media (max-width: 640px) {
