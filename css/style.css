@@ -1000,6 +1000,7 @@ body.theme-shop { --theme: var(--green); --theme-deep: var(--green-deep); }
 .info-card__title {
   font-size: 23px;
   font-weight: 900;
+  line-height: 1.4;
   color: var(--ink);
   margin-bottom: 16px;
   padding-bottom: 10px;
@@ -1009,7 +1010,15 @@ body.theme-shop { --theme: var(--green); --theme-deep: var(--green-deep); }
   align-items: flex-end;
   min-height: 2.6em;
 }
-.info-card__text { font-size: 15px; }
+/* タイトル頭の連番。テキストと同じ行に置きつつ、折り返しに巻き込まれないようにする */
+.info-card__num {
+  flex: none;
+  font-family: var(--font-en);
+  font-size: 0.95em;
+  color: var(--theme);
+  margin-right: 0.45em;
+}
+.info-card__text { font-size: 15px; line-height: 2; }
 
 /* ---------- 汎用：定義リスト（活動概要・基本情報） ---------- */
 
